@@ -32,12 +32,12 @@ RRECOMMENDS:${PN} += "dbus libavahi-core libavahi-common libavahi-client"
 
 TEAMVIEWER_IOT_AGENT_VERSION="3.5.10"
 
-SRC_URI += "https://download-iot.teamviewer.com/agents/linux/${TEAMVIEWER_IOT_AGENT_VERSION}/armv7/teamviewer-iot-agent-armv7_${TEAMVIEWER_IOT_AGENT_VERSION}_armhf.deb"
-SRC_URI[md5sum] = "9909065535228ee68db27a0c9ad7ef09"
-SRC_URI[sha1sum] = "5d90c6c42d1a34f43680eb13a3fc049c9bc877db"
-SRC_URI[sha256sum] = "670dc40794e3ae39664e3c6ab19d443b4e86d349fc6634957397535f5c4ed944"
-SRC_URI[sha384sum] = "3de1fd315e13eb9f8cdea1f752ea39ae51f4e3512486449c2376c2061c39dd6524cb2c09d9373b5465967b28eb539ac9"
-SRC_URI[sha512sum] = "23dd1ef2fc29179b85364109335ad0fb60b27407aeff01a6c665624fe73ba163c85b1e0e74a5722c6d8585f3efd85511a34ebde8e3d79f7f2e536bd7c96b23b7"
+SRC_URI += "https://download-iot.teamviewer.com/agents/linux/3.5.10/amd64/teamviewer-iot-agent_3.5.10_amd64.deb"
+SRC_URI[md5sum] = "aa84c2b07118cbceb723015aec1c8369"
+SRC_URI[sha1sum] = "2b349d1ebe4adc786086b91b2eae37412eb6acdf"
+SRC_URI[sha256sum] = "ed93ad340e119b7da4cc252a89502dbb4e71ae44625fa0a5ebc2caa7d5a87a63"
+SRC_URI[sha384sum] = "4c15d8cb9efd5f7f400c85896924bfae1270fb01c90b9b984d3bd40107085606cf554807203cf81ea91def29e086b60e"
+SRC_URI[sha512sum] = "862f9da2f51ee2149b1535d1db96f99c38025408dfb685f15d47cd53776bc8fac2fa804ee1264d2bdfe70d65bfd61529b0f76f2650a14289c3998f047f31add2"
 
 # NOTE: no Makefile found, unable to determine what needs to be done
 
@@ -60,7 +60,7 @@ do_install () {
 	cp -r ${WORKDIR}/usr/share/doc ${D}/usr/share/teamviewer-iot-agent-layer-docs
 
 	#Installation scripts
-	ar x ${DL_DIR}/teamviewer-iot-agent-armv7_${TEAMVIEWER_IOT_AGENT_VERSION}_armhf.deb
+	ar x ${DL_DIR}/teamviewer-iot-agent_${TEAMVIEWER_IOT_AGENT_VERSION}_amd64.deb
 	tar xf control.tar.gz --no-same-owner
 	install -m 0700 preinst ${D}/usr/share/teamviewer-iot-agent/
 	install -m 0700 postinst ${D}/usr/share/teamviewer-iot-agent/
