@@ -75,9 +75,6 @@ pkg_postinst_ontarget:${PN} () {
     /usr/share/teamviewer-iot-agent/postinst
     rm -f /usr/share/teamviewer-iot-agent/preinst
     rm -f /usr/share/teamviewer-iot-agent-layer-docs
-    
-    # Enable systemd service
-    systemctl enable teamviewer-iot-agent.service
 }
 
 FILES:${PN} += "/etc/* \
